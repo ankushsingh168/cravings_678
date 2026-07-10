@@ -4,7 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 import AdminSetting from "../../components/adminDashboard/AdminSetting";
 import AdminSidebar from "../../components/adminDashboard/AdminSidebar";
 import AdminOverview from "../../components/adminDashboard/AdminOverview";
-import AdminOrders from "../../components/adminDashboard/AdminOrder";
+import AdminOrders from "../../components/adminDashboard/AdminOrders";
 
 const AdminDashboard = () => {
   const { isLogin, role } = useAuth();
@@ -32,7 +32,7 @@ const AdminDashboard = () => {
 
   return (
     <>
-      <div className="h-[92vh] flex gap-2 m-2">
+      <div className="h-[91vh] flex gap-2 p-2">
         <div className="w-3/17 bg-(--color-base-200) p-4 rounded-lg shadow-md h-full">
           <AdminSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
