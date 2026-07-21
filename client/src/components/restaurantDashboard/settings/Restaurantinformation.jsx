@@ -82,7 +82,6 @@ const RestaurantInformation = () => {
     description: restaurantData?.description || "",
     restaurantType: restaurantData?.restaurantType || "",
     cuisineTypes: restaurantData?.cuisineTypes?.join(", ") || "",
-    isOpen: restaurantData?.isOpen || false,
     contactEmail: restaurantData?.contactDetails?.email || "",
     contactPhone: restaurantData?.contactDetails?.phone || "",
     openingTime: restaurantData?.servingHours?.openingTime || "",

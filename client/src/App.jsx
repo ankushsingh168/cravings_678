@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import RestaurantDashboard from "./pages/dashboard/RestaurantDashboard";
 import RiderDashboard from "./pages/dashboard/RiderDashboard";
 import AdminDashboard from "./pages/dashboard/AdminDashboard";
+import Test from "./pages/Test";
 
 const App = () => {
   return (
