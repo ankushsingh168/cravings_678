@@ -5,6 +5,7 @@ import { LuPencilLine, LuTrash2, LuEye, LuChevronDown } from "react-icons/lu";
 import { AiTwotoneLike } from "react-icons/ai";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import ConfirmModal from "./menuItems/ConfirmModal";
+import AddNewItemModal from "./menuItems/AddNewItemModel";
 
 const dummyMenu = [
   {
@@ -12,7 +13,7 @@ const dummyMenu = [
     description: "Fresh mozzarella, tomato sauce, basil leaves, and oregano.",
     price: 299,
     category: "Pizza",
-    type: "Vegetarian",
+    foodType: "Vegetarian",
     image: {
       url: "https://picsum.photos/seed/pizza1/600/600",
       publicId: "dummy-pizza-1",
@@ -29,7 +30,7 @@ const dummyMenu = [
       "Loaded with crispy vegetable patty, lettuce, cheese, and mayo.",
     price: 179,
     category: "Burger",
-    type: "Vegetarian",
+    foodType: "Vegetarian",
     image: {
       url: "https://picsum.photos/seed/burger1/600/600",
       publicId: "dummy-burger-1",
@@ -46,7 +47,7 @@ const dummyMenu = [
       "Soft tortilla stuffed with spicy paneer tikka and fresh veggies.",
     price: 229,
     category: "Wrap",
-    type: "Vegetarian",
+    foodType: "Vegetarian",
     image: {
       url: "https://picsum.photos/seed/wrap1/600/600",
       publicId: "dummy-wrap-1",
@@ -62,7 +63,7 @@ const dummyMenu = [
     description: "Warm chocolate brownie served with vanilla ice cream.",
     price: 199,
     category: "Dessert",
-    type: "Vegetarian",
+    foodType: "Vegetarian",
     image: {
       url: "https://picsum.photos/seed/dessert1/600/600",
       publicId: "dummy-dessert-1",
@@ -78,7 +79,7 @@ const dummyMenu = [
     description: "Refreshing chilled coffee topped with whipped cream.",
     price: 149,
     category: "Beverages",
-    type: "Vegetarian",
+    foodType: "Vegetarian",
     image: {
       url: "https://picsum.photos/seed/coffee1/600/600",
       publicId: "dummy-coffee-1",
@@ -95,7 +96,7 @@ const dummyMenu = [
       "Stone-baked pizza topped with spicy chicken tikka and mozzarella.",
     price: 399,
     category: "Pizza",
-    type: "Non-Vegetarian",
+    foodType: "Non-Vegetarian",
     image: {
       url: "https://picsum.photos/seed/chicken-pizza/600/600",
       publicId: "dummy-chicken-pizza",
@@ -112,7 +113,7 @@ const dummyMenu = [
       "Juicy grilled chicken patty with lettuce, cheese, and smoky sauce.",
     price: 279,
     category: "Burger",
-    type: "Non-Vegetarian",
+    foodType: "Non-Vegetarian",
     image: {
       url: "https://picsum.photos/seed/chicken-burger/600/600",
       publicId: "dummy-chicken-burger",
@@ -128,7 +129,7 @@ const dummyMenu = [
     description: "Tender chicken cooked in a rich, creamy tomato gravy.",
     price: 429,
     category: "Main Course",
-    type: "Non-Vegetarian",
+    foodType: "Non-Vegetarian",
     image: {
       url: "https://picsum.photos/seed/butter-chicken/600/600",
       publicId: "dummy-butter-chicken",
@@ -145,7 +146,7 @@ const dummyMenu = [
       "Fragrant basmati rice cooked with marinated chicken and aromatic spices.",
     price: 349,
     category: "Biryani",
-    type: "Non-Vegetarian",
+    foodType: "Non-Vegetarian",
     image: {
       url: "https://picsum.photos/seed/chicken-biryani/600/600",
       publicId: "dummy-chicken-biryani",
@@ -162,7 +163,7 @@ const dummyMenu = [
       "Crispy battered fish fillet served with golden fries and tartar sauce.",
     price: 379,
     category: "Seafood",
-    type: "Non-Vegetarian",
+    foodType: "Non-Vegetarian",
     image: {
       url: "https://picsum.photos/seed/fish-chips/600/600",
       publicId: "dummy-fish-chips",
@@ -179,7 +180,7 @@ const dummyMenu = [
       "Wok-tossed fried rice with juicy prawns, vegetables, and soy sauce.",
     price: 389,
     category: "Rice",
-    type: "Non-Vegetarian",
+    foodType: "Non-Vegetarian",
     image: {
       url: "https://picsum.photos/seed/prawn-rice/600/600",
       publicId: "dummy-prawn-rice",
@@ -196,7 +197,7 @@ const dummyMenu = [
       "Grilled chicken wrapped with fresh veggies, garlic sauce, and pita bread.",
     price: 249,
     category: "Wrap",
-    type: "Non-Vegetarian",
+    foodType: "Non-Vegetarian",
     image: {
       url: "https://picsum.photos/seed/shawarma-wrap/600/600",
       publicId: "dummy-shawarma-wrap",
@@ -212,7 +213,7 @@ const dummyMenu = [
     description: "Crispy chicken wings tossed in a fiery hot sauce.",
     price: 299,
     category: "Starter",
-    type: "Non-Vegetarian",
+    foodType: "Non-Vegetarian",
     image: {
       url: "https://picsum.photos/seed/chicken-wings/600/600",
       publicId: "dummy-chicken-wings",
@@ -301,7 +302,7 @@ const RestaurantMenu = () => {
                 <div className="text-center">₹ {item.price.toFixed(2)}</div>
                 <div className="">
                   <div>{item.category}</div>
-                  <div className="text-sm">{item.type}</div>
+                  <div className="text-sm">{item.foodType}</div>
                 </div>
                 <div>
                   <div className="relative inline-flex items-center">
@@ -424,6 +425,13 @@ const RestaurantMenu = () => {
           modalMode={modalMode}
           isOpen={isControlsModalOpen}
           onClose={() => setIsControlsModalOpen(false)}
+        />
+      )}
+
+      {isAddNewItemModalOpen && (
+        <AddNewItemModal
+          isOpen={isAddNewItemModalOpen}
+          onClose={() => setIsAddNewItemModalOpen(false)}
         />
       )}
     </>
