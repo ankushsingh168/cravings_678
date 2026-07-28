@@ -90,7 +90,7 @@ const Navbar = () => {
               to="/register/customer"
               className="bg-(--color-primary-content) text-(--color-primary) hover:bg-(--color-primary) hover:text-(--color-primary-content) border px-3 py-1 rounded"
             >
-              
+              Register
             </Link>
           </div>
         )}
